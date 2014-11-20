@@ -1,0 +1,48 @@
+<head>
+<style>
+li.nav {
+   display: inline;
+}
+
+a.nav:link, a.nav:visited{
+   width: 60px;
+   font-weight: bold;
+   color: #FFFFFF;
+   background-color: #FF9966;
+   text-align: center;
+   padding: 1%;
+   text-decoration: none;
+   text-transform: uppercase;
+   font-family:  "Avant Garde", "Century Gothic", sans-serif;
+}
+
+a.nav:hover, a.nav:active {
+   background-color: #CCFFCC;
+}
+
+ul.nav {
+   list-style-type: none;
+   margin: 200;
+   padding: 300;
+   overflow: hidden;
+   text-align: center;
+}
+</style>
+</head>
+<ul class="header")
+      {%if user.is_authenticated %}
+           <p>Welcome, {{ user.username|capfirst }}! </p>
+           <a style="float: right; margin: 0; padding: 0; color: grey;" href="/profile/">My Profile</a>
+           {% url 'mysite.views.logout_user' as logout_user %}
+           <a style="float: right; margin: 0; padding: 0; color: grey;" href="{{ logout_user }}">Logout</a>
+      {% else %}
+           <p>Welcome, new user. Please log in.</p>
+      {% endif %}
+
+<ul>
+
+<ul class="nav">
+    <li class="nav"><a class="nav" href="/home/">Home</a></li>
+    <li class="nav"><a class="nav" href="/contact/">Contact</a></li>
+
+</ul>
